@@ -16,7 +16,6 @@ public class Car {
                 this.productionYear = productionYear;
                 this.productionCountry = productionCountry;
         }
-
     @Override
     public String toString() {
         return "Car{" +
