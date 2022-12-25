@@ -6,15 +6,15 @@ public class Car {
         private final String brand;                // марка
         private final String model;                // модель
         private double engineVolume;               // объем двигателя в литрах
-        private String color;                     // цвет кузова
+        private String color;                      // цвет кузова
         private final int productionYear;          // год производства
         private final String productionCountry;    // страна сборки
         private String transmission;               // коробка передач
         private final String bodyType;             // тип кузова
         private String registrationNumber;         // регистрационный номер
         private final int numberOfSeats;           // количество мест
-        private int rubberType;                // тип резины-от месяца 1-12)
-        static String changeRubber = "Лето";           // замена резины
+        private int rubberType;                    // тип резины-зима-лето
+        static String changeRubber = "Лето";       // замена резины
 
 
     public static class Key {
@@ -38,7 +38,7 @@ public class Car {
         private final String number;
         public Insurance(LocalDate validityPeriod, double price, String number) {
 
-            this.validityPeriod = Objects.requireNonNullElseGet(validityPeriod, LocalDate::now);
+            this.validityPeriod = validityPeriod;
 
             if (price >= 0) {
                 this.price = price;
@@ -55,8 +55,6 @@ public class Car {
         public LocalDate getValidityPeriod() {
             return validityPeriod;
         }
-
-
         public double getPrice() {
             return price;
         }
@@ -64,7 +62,7 @@ public class Car {
             return number;
         }
         public void checkExpirationDate() {
-            if (validityPeriod.isBefore(LocalDate.now().minusDays(365))) {
+            if (validityPeriod.isBefore(LocalDate.now())) {
                 System.out.println("Нужно срочно ехать оформлять новую страховку");
             }
         }
@@ -206,8 +204,6 @@ public class Car {
           } return changeRubber;
         }
 
-
-
     @Override
     public String toString() {
         return "Car{" +
@@ -223,5 +219,6 @@ public class Car {
                 ", numberOfSeats=" + numberOfSeats +
                 ", rubberType=" + change() +
                 '}';
+
     }
 }

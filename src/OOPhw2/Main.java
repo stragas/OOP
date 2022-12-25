@@ -20,8 +20,6 @@ public class Main {
         Car myCar5 = new Car("Hyundai", "Hyundai Avante", 1.6, "оранжевый", 2016,
                 "Ю.Корея","Автоматическая","Кроссовер","K322",5,1);
 
-
-
         System.out.println(myCar1);
         System.out.println(myCar2);
         System.out.println(myCar3);
