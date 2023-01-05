@@ -21,10 +21,10 @@ public class Main {
         Truck<DriverC> kamaz = new Truck<DriverC>("Камаз", "65801", 5.9);
         Truck<DriverC> faw = new Truck<DriverC>("FAW", "J5", 5.5);
 
-        Bus<DriverD> volvo = new Bus<DriverD>("Volvo", "FL7", 4.2);
-        Bus<DriverD> liaz = new Bus<DriverD>("ЛиАЗ", "5256", 2.5);
-        Bus<DriverD> paz = new Bus<DriverD>("ПАЗ", "\"Вектор Next\"", 3.2);
-        Bus<DriverD> scania = new Bus<DriverD>("Scania", "Irizar i6", 3.5);
+        Bus volvo = new Bus("Volvo", "FL7", 4.2);
+        Bus liaz = new Bus("ЛиАЗ", "5256", 2.5);
+        Bus paz = new Bus("ПАЗ", "\"Вектор Next\"", 3.2);
+        Bus scania = new Bus("Scania", "Irizar i6", 3.5);
 
         System.out.println(bmw);
         System.out.println(foton);

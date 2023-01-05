@@ -4,7 +4,7 @@ package OOPhw4.transport;
 
 import OOPhw4.drivers.DriverD;
 
-public class Bus<D extends DriverD> extends Transport {
+public class Bus extends Transport<DriverD> {
 
     private D driverD;
 
