@@ -1,12 +1,15 @@
 package OOPhw4.transport;
 
- // package transport;
-
 import OOPhw4.drivers.DriverD;
 
 public class Bus extends Transport<DriverD> {
 
-    private D driverD;
+
+    public Bus(String brand, String model, double engineVolume) {
+        super(brand, model, engineVolume);
+    }
+
+
 
     @Override
     public void startMovement() {
@@ -34,19 +37,15 @@ public class Bus extends Transport<DriverD> {
     }
     @Override
     public void info() {
-        System.out.println("Водитель " + getDriverD().getFullName() +
+        System.out.println("Водитель " + getDriverCar().getFullName() +
                 " управляет автомобилем " + getBrand() + " " + getModel() +
                 " и будет участовать в заезде");
     }
 
 
-    public Bus(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
-    }
 
-    public D getDriverD() { return driverD; }
 
-    public void setDriverD(D driverD) { this.driverD = driverD; }
+
 
     @Override
     public String toString() {
@@ -61,9 +60,3 @@ public class Bus extends Transport<DriverD> {
 
 
 
-//                releaseYear + " год выпуска, страна сборки - " +
-//                country + ", " +
-//                colour +  " цвет, макс. скорость - " +
-//                maxSpeed + " км/ч";
-//    }
-//}

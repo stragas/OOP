@@ -2,9 +2,10 @@ package OOPhw4.transport;
 
 import OOPhw4.drivers.DriverB;
 
-public class PassengerCar<B extends DriverB> extends Transport {
 
-    private B driverB;
+public class PassengerCar extends Transport<DriverB> {
+
+
 
     @Override
     public void startMovement() {
@@ -33,7 +34,7 @@ public class PassengerCar<B extends DriverB> extends Transport {
 
     @Override
     public void info() {
-        System.out.println("Водитель " + getDriverB().getFullName() +
+        System.out.println("Водитель " + getDriverCar().getFullName() +
                 " управляет автомобилем " + getBrand() + " " + getModel() +
                 " и будет участовать в заезде");
     }
@@ -42,9 +43,6 @@ public class PassengerCar<B extends DriverB> extends Transport {
         super(brand, model, engineVolume);
     }
 
-    public B getDriverB() { return driverB; }
-
-    public void setDriverB(B driverB) { this.driverB = driverB; }
 
     @Override
     public String toString() {

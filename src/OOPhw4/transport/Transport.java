@@ -5,7 +5,7 @@ package OOPhw4.transport;
 import OOPhw4.drivers.DriverCar;
 
 
-public abstract class Transport<TR extends DriverCar> implements Competing {
+public abstract class Transport<T> implements Competing {
 
     abstract void startMovement();
 
@@ -17,7 +17,9 @@ public abstract class Transport<TR extends DriverCar> implements Competing {
     protected final String model;
     protected double engineVolume;
 
-    private TR driver;
+    private T driver;
+    public T getDriverCar() { return driver; }
+    public void setDriverCar(T driver) { this.driver = driver; }
 
 
     public Transport(String brand, String model, double engineVolume) {
@@ -57,90 +59,6 @@ public abstract class Transport<TR extends DriverCar> implements Competing {
         }
     }
 
-    public TR getDriverCar() { return driver; }
-
-    public void setDriverCar(TR driver) { this.driver = driver; }
 
 }
 
-//    protected final int releaseYear;
-//    protected final String country;
-//    protected String colour;
-//    protected int maxSpeed;
-//
-//    public Transport(String brand, String model, int releaseYear, String country, String colour, int maxSpeed) {
-//
-//        if (brand == null || brand.isBlank() || brand.isEmpty()) {
-//            this.brand = "default";
-//        } else {
-//            this.brand = brand;
-//        }
-//
-//
-//        if (model == null || model.isBlank() || model.isEmpty()) {
-//            this.model = "default";
-//        } else {
-//            this.model = model;
-//        }
-//
-//
-//        if (releaseYear <= 0) {
-//            this.releaseYear = 2020;
-//        } else {
-//            this.releaseYear = releaseYear;
-//        }
-//
-//
-//        if (country == null || country.isBlank() || country.isEmpty()) {
-//            this.country = "default";
-//        } else {
-//            this.country = country;
-//        }
-//
-//        this.colour = colour;
-//        this.maxSpeed = maxSpeed;
-//
-//
-//        if (colour == null || colour.isBlank() || colour.isEmpty()) {
-//            this.colour = "default";
-//        } else {
-//            this.colour = colour;
-//        }
-//
-//
-//        if (maxSpeed <= 0) {
-//            this.maxSpeed = Math.abs(maxSpeed);
-//        } else {
-//            this.maxSpeed = maxSpeed;
-//        }
-//    }
-//
-//    public String getBrand() { return brand; }
-//
-//    public String getModel() { return model; }
-//
-//    public int getReleaseYear() { return releaseYear; }
-//
-//    public String getCountry() { return country; }
-//
-//    public String getColour() { return colour; }
-//
-//    public int getMaxSpeed() { return maxSpeed; }
-//
-//
-//    public void setColour(String colour) {
-//        if (colour == null || colour.isBlank() || colour.isEmpty()) {
-//            this.colour = "default";
-//        } else {
-//            this.colour = colour;
-//        }
-//    }
-//
-//    public void setMaxSpeed(int maxSpeed) {
-//        if (maxSpeed <= 0) {
-//            this.maxSpeed = Math.abs(maxSpeed);
-//        } else {
-//            this.maxSpeed = maxSpeed;
-//        }
-//    }
-//}

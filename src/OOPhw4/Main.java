@@ -11,18 +11,20 @@ import OOPhw4.transport.Bus;
 public class Main {
     public static void main(String[] args) {
 
-        PassengerCar<DriverB> bmw = new PassengerCar<DriverB>("BMW", "X6", 2.9);
-        PassengerCar<DriverB> audi = new PassengerCar<DriverB>("Audi", "Q5", 3.2);
-        PassengerCar<DriverB> hyundai = new PassengerCar<DriverB>("Hyundai", "Sonata", 1.6);
-        PassengerCar<DriverB> honda = new PassengerCar<DriverB>("Honda", "Civic", 1.5);
+        PassengerCar bmw = new PassengerCar("BMW", "X6", 2.9);
+        PassengerCar audi = new PassengerCar("Audi", "Q5", 3.2);
+        PassengerCar hyundai = new PassengerCar("Hyundai", "Sonata", 1.6);
+        PassengerCar honda = new PassengerCar("Honda", "Civic", 1.5);
 
-        Truck<DriverC> man = new Truck<DriverC>("MAN", "TGS 6x6", 6.5);
-        Truck<DriverC> foton = new Truck<DriverC>("Foton", "Auman", 6.4);
-        Truck<DriverC> kamaz = new Truck<DriverC>("Камаз", "65801", 5.9);
-        Truck<DriverC> faw = new Truck<DriverC>("FAW", "J5", 5.5);
+        Truck man = new Truck("MAN", "TGS 6x6", 6.5);
+        Truck foton = new Truck("Foton", "Auman", 6.4);
+        Truck kamaz = new Truck("Камаз", "65801", 5.9);
+        Truck faw = new Truck("FAW", "J5", 5.5);
+
 
         Bus volvo = new Bus("Volvo", "FL7", 4.2);
         Bus liaz = new Bus("ЛиАЗ", "5256", 2.5);
+
         Bus paz = new Bus("ПАЗ", "\"Вектор Next\"", 3.2);
         Bus scania = new Bus("Scania", "Irizar i6", 3.5);
 
@@ -43,9 +45,8 @@ public class Main {
 
         System.out.println(oleg);
 
-        honda.setDriverB(oleg);
-        faw.setDriverC(igor);
-        liaz.setDriverD(leha);
+
+
 
         honda.info();
         faw.info();
