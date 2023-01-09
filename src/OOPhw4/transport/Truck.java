@@ -1,10 +1,11 @@
 package OOPhw4.transport;
 
 import OOPhw4.drivers.DriverC;
+import OOPhw4.ENUM.TonnageOfTruck;
 
-public class Truck<C extends DriverC> extends Transport {
+public class Truck  extends Transport<DriverC>  {
+    private TonnageOfTruck tonnageOfTruck;
 
-    private C driverC;
 
     @Override
     public void startMovement() {
@@ -33,7 +34,7 @@ public class Truck<C extends DriverC> extends Transport {
 
     @Override
     public void info() {
-        System.out.println("Водитель " + getDriverC().getFullName() +
+        System.out.println("Водитель " + getDriverCar().getFullName() +
                 " управляет автомобилем " + getBrand() + " " + getModel() +
                 " и будет участовать в заезде");
     }
@@ -42,9 +43,13 @@ public class Truck<C extends DriverC> extends Transport {
         super(brand, model, engineVolume);
     }
 
-    public C getDriverC() { return driverC; }
+    public TonnageOfTruck getTonnageOfTruck() {
+        return tonnageOfTruck;
+    }
 
-    public void setDriverC(C driverC) { this.driverC = driverC; }
+    public void setTonnageOfTruck(TonnageOfTruck tonnageOfTruck) {
+        this.tonnageOfTruck = tonnageOfTruck;
+    }
 
     @Override
     public String toString() {

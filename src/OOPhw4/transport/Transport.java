@@ -12,6 +12,7 @@ public abstract class Transport<T> implements Competing {
     abstract void endMovement();
 
     abstract void info();
+    abstract void printType();
 
     protected final String brand;
     protected final String model;

@@ -7,7 +7,9 @@ import OOPhw4.transport.PassengerCar;
 import OOPhw4.transport.Transport;
 import OOPhw4.transport.Truck;
 import OOPhw4.transport.Bus;
-
+import OOPhw4.ENUM.CapacityOfBus;
+import OOPhw4.ENUM.TonnageOfTruck;
+import OOPhw4.ENUM.BodyTypeOfCar;
 public class Main {
     public static void main(String[] args) {
 
@@ -51,6 +53,14 @@ public class Main {
         honda.info();
         faw.info();
         liaz.info();
+
+        hyundai.setBodyTypeOfCar(BodyTypeOfCar.MINIVAN);
+        kamaz.setTonnageOfTruck(TonnageOfTruck.N2);
+        paz.setCapacityOfBus(CapacityOfBus.MEDIUM);
+
+        hyundai.printType();
+        kamaz.printType();
+        paz.printType();
 
     }
 }
