@@ -13,13 +13,16 @@ public abstract class Transport<T> implements Competing {
 
     abstract void info();
     abstract void printType();
+    // abstract void passDiagnostics();
+
+    // abstract void checkDriverLicense();
 
     protected final String brand;
     protected final String model;
     protected double engineVolume;
 
     private T driver;
-    public T getDriverCar() { return driver; }
+
     public void setDriverCar(T driver) { this.driver = driver; }
 
 
@@ -60,6 +63,6 @@ public abstract class Transport<T> implements Competing {
         }
     }
 
-
+    public T getDriverCar() { return driver; }
 }
 

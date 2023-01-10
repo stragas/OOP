@@ -1,15 +1,20 @@
 package OOPhw4.transport;
 
+import OOPhw4.drivers.DriverC;
 import OOPhw4.drivers.DriverD;
-
+import OOPhw4.ENUM.CapacityOfBus;
 public class Bus extends Transport<DriverD> {
 
+    private DriverD driverD;
+    public DriverD getDriverC() { return driverD; }
+    public DriverD getDriverD() { return driverD; }
 
+    public void setDriverD(DriverD driverD) { this.driverD = driverD; }
     public Bus(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }
 
-
+    private CapacityOfBus capacityOfBus;
 
     @Override
     public void startMovement() {
@@ -42,8 +47,21 @@ public class Bus extends Transport<DriverD> {
                 " и будет участовать в заезде");
     }
 
+    public CapacityOfBus getCapacityOfBus() {
+        return capacityOfBus;
+    }
 
-
+    public void setCapacityOfBus(CapacityOfBus capacityOfBus) {
+        this.capacityOfBus = capacityOfBus;
+    }
+    @Override
+    public void printType() {
+        if(capacityOfBus == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(capacityOfBus);
+        }
+    }
 
 
 

@@ -1,10 +1,15 @@
 package OOPhw4.transport;
 
 import OOPhw4.drivers.DriverB;
-
+import OOPhw4.ENUM.BodyTypeOfCar;
 
 public class PassengerCar extends Transport<DriverB> {
 
+    private BodyTypeOfCar bodyTypeOfCar;
+    private DriverB driverB;
+    public DriverB getDriverB() { return driverB; }
+
+    public void setDriverB(DriverB driverB) { this.driverB = driverB; }
 
 
     @Override
@@ -34,7 +39,7 @@ public class PassengerCar extends Transport<DriverB> {
 
     @Override
     public void info() {
-        System.out.println("Водитель " + getDriverCar().getFullName() +
+        System.out.println("Водитель " + getDriverB().getFullName() +
                 " управляет автомобилем " + getBrand() + " " + getModel() +
                 " и будет участовать в заезде");
     }
@@ -43,7 +48,23 @@ public class PassengerCar extends Transport<DriverB> {
         super(brand, model, engineVolume);
     }
 
+    public BodyTypeOfCar getBodyTypeOfCar() {
+        return bodyTypeOfCar;
+    }
 
+    public void setBodyTypeOfCar(BodyTypeOfCar bodyTypeOfCar) {
+        this.bodyTypeOfCar = bodyTypeOfCar;
+    }
+
+    @Override
+    public void printType() {
+        if (bodyTypeOfCar == null){
+            System.out.println("Данных по транспортному средству недостаточно");
+        }
+        else {
+            System.out.println(bodyTypeOfCar);
+        }
+    }
     @Override
     public String toString() {
         return brand + " " +

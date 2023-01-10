@@ -1,12 +1,15 @@
 package OOPhw4.transport;
 
+
 import OOPhw4.drivers.DriverC;
 import OOPhw4.ENUM.TonnageOfTruck;
 
 public class Truck  extends Transport<DriverC>  {
     private TonnageOfTruck tonnageOfTruck;
+    private DriverC driverC;
+    public DriverC getDriverC() { return driverC; }
 
-
+    public void setDriverC(DriverC driverC) { this.driverC = driverC; }
     @Override
     public void startMovement() {
         System.out.println(getBrand() + " " + getModel() + " начал движение");
@@ -34,7 +37,7 @@ public class Truck  extends Transport<DriverC>  {
 
     @Override
     public void info() {
-        System.out.println("Водитель " + getDriverCar().getFullName() +
+        System.out.println("Водитель " + getDriverC().getFullName() +
                 " управляет автомобилем " + getBrand() + " " + getModel() +
                 " и будет участовать в заезде");
     }
@@ -49,6 +52,14 @@ public class Truck  extends Transport<DriverC>  {
 
     public void setTonnageOfTruck(TonnageOfTruck tonnageOfTruck) {
         this.tonnageOfTruck = tonnageOfTruck;
+    }
+    @Override
+    public void printType() {
+        if (tonnageOfTruck == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println(tonnageOfTruck);
+        }
     }
 
     @Override
